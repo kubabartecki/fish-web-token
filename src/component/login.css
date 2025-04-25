@@ -1,0 +1,10 @@
+.login-elements{
+    display:flex;
+    flex-direction: column;
+}
+
+.login-elements input,
+.login-elements button {
+    margin-left: 10px;
+    margin-bottom: 6px;
+}

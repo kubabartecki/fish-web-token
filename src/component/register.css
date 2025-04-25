@@ -1,0 +1,10 @@
+.register-elements{
+    display:flex;
+    flex-direction: column;
+}
+
+.register-elements input,
+.register-elements button {
+    margin-left: 10px;
+    margin-bottom: 6px;
+}

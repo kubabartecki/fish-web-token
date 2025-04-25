@@ -1,0 +1,16 @@
+h1 {
+  margin-left: 10px;
+  margin-bottom: 12px;
+  color: blue;
+}
+
+h2 {
+  margin-bottom: 12px;
+  margin-left: 10px;
+  color: cadetblue;
+}
+
+p {
+  margin-bottom: 12px;
+  margin-left: 10px;
+}
