@@ -14,7 +14,16 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
-    public User addUser(User user) {
+    public Optional<User> addBasicUser(String username, String password, String role) {
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setRole(role);
+
+        return Optional.ofNullable(addUser(user));
+    }
+
+    private User addUser(User user) {
         if (userRepository.existsByUsername(user.getUsername())) {
             return null;
         }

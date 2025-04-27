@@ -21,8 +21,6 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import javax.crypto.SecretKey;
 
-import static com.fishwebtoken.api.security.model.ApplicationUserRole.USER;
-
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -47,8 +45,7 @@ public class ApplicationSecurityConfig {
                 .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager(http.getSharedObject(AuthenticationConfiguration.class)), jwtConfig, secretKey))
                 .addFilterAfter(new JwtTokenVerifier(secretKey, jwtConfig), JwtUsernameAndPasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/login", "/").permitAll()
-                        .requestMatchers("/test").hasRole(USER.name())
+                        .requestMatchers("/", "/login", "/api/v1/auth/register").permitAll()
                         .anyRequest().authenticated()
                 )
                 .build();
