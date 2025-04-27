@@ -1,10 +1,10 @@
 package com.fishwebtoken.api.security.model;
 
 public enum ApplicationUserPermission {
-    USER_READ("student:read"),
-    USER_WRITE("student:write"),
-    STORE_MAN_READ("lecture:read"),
-    STORE_MAN_WRITE("lecture:write"),
+    USER_READ("user:read"),
+    USER_WRITE("user:write"),
+    STORE_MAN_READ("store_man:read"),
+    STORE_MAN_WRITE("store_man:write"),
     ADMIN_READ("admin:read"),
     ADMIN_WRITE("admin:write");
 
