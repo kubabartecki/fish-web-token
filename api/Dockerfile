@@ -16,7 +16,6 @@ FROM openjdk:21-jdk-slim
 
 WORKDIR /app
 
-# Skopiuj gotowy plik .jar z etapu builder
 COPY --from=builder /app/build/libs/*.jar app.jar
 
-ENTRYPOINT ["java", "-Dspring.profiles.active=docker", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
