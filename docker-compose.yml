@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  postgres-db:
+    image: postgres:16
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: postgres-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - fwt_network
+
+  api:
+    container_name: spring-backend
+    ports:
+      - "8080:8080"
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - DB_URL=jdbc:postgresql://postgres-db:5432/postgres-db
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+    networks:
+      - fwt_network
+    links:
+      - postgres-db
+
+networks:
+  fwt_network:
+    driver: bridge
