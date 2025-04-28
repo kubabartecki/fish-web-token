@@ -6,7 +6,7 @@ import SignUpPage from "./pages/SignUpPage";
 function App() {
   return (
   <Router>
-      <div className="App" style={{ display: "flex" }}>
+      <div className="App" style={{ display: "flex", backgroundColor: "#595959" }}>
         <Sidebar />
         <Routes>
           <Route path="/home" element={<Home />} />
