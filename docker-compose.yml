@@ -31,6 +31,16 @@ services:
     links:
       - postgres-db
 
+  frontend:
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    networks:
+      - fwt_network
+
 networks:
   fwt_network:
     driver: bridge
