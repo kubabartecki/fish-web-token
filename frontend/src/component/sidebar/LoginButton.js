@@ -1,11 +1,11 @@
 import React from "react";
-import LoginIcon from '@mui/icons-material/Login';
+import LoginIcon from "@mui/icons-material/Login";
 import "../../App.css";
 
 function LoginButton() {
   return (
     <div className="LoginButton">
-      <button 
+      <button
         className="login-btn"
         onClick={() => {
           window.location.pathname = "/login";

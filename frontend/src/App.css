@@ -93,3 +93,40 @@ body {
   display: flex;
   align-items: center;
 }
+
+.LogOutButton {
+  position: absolute;
+  bottom: 0;  
+  width: 100%;
+}
+
+.logout-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #2f4050;
+  border: none;
+  width: 100%;
+  height: 60px;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.logout-btn:hover {
+  background-color: #293846;
+  cursor: pointer;
+}
+
+.logout-btn #icon {
+  flex: 30%;
+  display: grid;
+  place-items: center;
+}
+
+.logout-btn #title {
+  flex: 70%;
+  display: flex;
+  align-items: center;
+}

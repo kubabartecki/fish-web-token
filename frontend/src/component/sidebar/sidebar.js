@@ -2,8 +2,10 @@ import React from "react";
 import "../../App.css";
 import { SidebarData } from "./sidebardata";
 import LoginButton from "./LoginButton";
+import LogOutButton from "./LogOutButton"
 
 function Sidebar() {
+    const token = localStorage.getItem("jwt");
   return (
     <div className="Sidebar">
       <ul className="SidebarList">
@@ -22,8 +24,11 @@ function Sidebar() {
           );
         })}
       </ul>
+      {token ? 
+        <LogOutButton/> : 
         <LoginButton/>
-    </div>
+      }
+        </div>
   );
 }
 
