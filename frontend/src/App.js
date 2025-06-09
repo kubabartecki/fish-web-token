@@ -2,6 +2,7 @@ import Sidebar from "./component/sidebar/sidebar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import SignUpPage from "./pages/SignUpPage";
+import Warehouse from "./pages/Warehouse";
 
 function App() {
   return (
@@ -11,8 +12,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<SignUpPage/>} />
-          {//kolejne strony
-          }
+          <Route path="/warehouse" element={<Warehouse/>} />
         </Routes>
       </div>
     </Router>

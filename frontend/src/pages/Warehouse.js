@@ -7,7 +7,7 @@ function Warehouse() {
   return (
     <div className="warehouse-container">
       {token ? (
-        <p>Work in progress! //TODO make request for warehouse data</p>
+        <p>Work in progress!</p> //TODO make request for warehouse data
       ) : (
         <p>Please log in first</p>
       )}
