@@ -1,6 +1,8 @@
 package com.fishwebtoken.api.fish;
 
+import com.fishwebtoken.api.fish.models.Fish;
 import com.fishwebtoken.api.fish.models.FishDto;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -8,27 +10,28 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/fishes")
+@RequiredArgsConstructor
 public class FishController {
+    private final FishService fishService;
+
     @PostMapping
     @PreAuthorize("hasAuthority('user:write')")
-    public ResponseEntity<FishDto> addFish(@RequestBody FishDto fish) {
-        // todo
+    public ResponseEntity<Fish> addFish(@RequestBody FishDto fish) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(new FishDto("ratatuj", 1, 1, 1));
+                .body(fishService.addFish(fish));
     }
 
     @PutMapping("{id}")
     @PreAuthorize("hasAuthority('user:write')")
-    public ResponseEntity<String> updateFish(@PathVariable Integer id, @RequestBody FishDto fish) {
-        // todo
-        return ResponseEntity.ok("Fish updated successfully: " + fish.name());
+    public ResponseEntity<Fish> updateFish(@PathVariable Integer id, @RequestBody FishDto fish) {
+        return ResponseEntity.ok(fishService.updateFish(id, fish));
     }
 
     @DeleteMapping("{id}")
     @PreAuthorize("hasAuthority('user:write')")
     public ResponseEntity<String> deleteFish(@PathVariable Integer id) {
-        // todo
+        fishService.deleteFish(id);
         return ResponseEntity.ok("Fish deleted successfully with ID: " + id);
     }
 }

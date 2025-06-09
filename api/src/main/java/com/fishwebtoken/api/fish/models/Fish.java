@@ -1,6 +1,6 @@
 package com.fishwebtoken.api.fish.models;
 
-import com.fishwebtoken.api.fish.species.FishSpecies;
+import com.fishwebtoken.api.fish.species.models.FishSpecies;
 import jakarta.persistence.*;
 import lombok.Data;
 
