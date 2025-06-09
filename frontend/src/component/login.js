@@ -35,6 +35,8 @@ const Login = () => {
         localStorage.setItem("jwt", token);
       }
       setMessage("Zalogowano poprawnie!");
+      setTimeout(1500);
+      window.location.reload();
     } else {
       setMessage("Błąd podczas logowania");
     }

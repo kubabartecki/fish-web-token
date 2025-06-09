@@ -1,5 +1,5 @@
 import React from "react";
-import "./Warehouse.css"
+import "./Warehouse.css";
 
 function Warehouse() {
   const token = localStorage.getItem("jwt");
@@ -9,7 +9,7 @@ function Warehouse() {
       {token ? (
         <p>Work in progress!</p> //TODO make request for warehouse data
       ) : (
-        <p>Please log in first</p>
+        <p>Please log in first!</p>
       )}
     </div>
   );

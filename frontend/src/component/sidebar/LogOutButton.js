@@ -1,15 +1,15 @@
 import React from "react";
-import LogoutIcon from '@mui/icons-material/Logout';
+import LogoutIcon from "@mui/icons-material/Logout";
 import "../../App.css";
 
 function LogOutButton() {
   return (
     <div className="LogOutButton">
-      <button 
+      <button
         className="logout-btn"
         onClick={() => {
-            localStorage.removeItem("jwt");
-            alert("You have been logged out!");
+          localStorage.removeItem("jwt");
+          alert("You have been logged out!");
           window.location.pathname = "/login";
         }}
       >

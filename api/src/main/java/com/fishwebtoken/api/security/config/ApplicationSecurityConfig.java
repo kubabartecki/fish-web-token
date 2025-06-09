@@ -89,6 +89,7 @@ public class ApplicationSecurityConfig {
                         .map(HttpMethod::name)
                         .toList());
         config.setAllowedHeaders(List.of(AUTHORIZATION, CONTENT_TYPE));
+        config.setExposedHeaders(List.of(AUTHORIZATION));
         config.setAllowCredentials(true);
         config.setMaxAge(3600L); // 1 hour
 
