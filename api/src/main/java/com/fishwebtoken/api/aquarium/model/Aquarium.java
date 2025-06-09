@@ -19,4 +19,5 @@ public class Aquarium {
     private String name;
     private float volume;
     private boolean isFreshwater;
+    private Integer userId;
 }
