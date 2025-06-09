@@ -11,6 +11,11 @@ import java.util.List;
 public class FeedTypeService {
     private final FeedTypeRepository feedTypeRepository;
 
+    public FeedType getFeedTypeById(int id) {
+        return feedTypeRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Feed type not found with ID: " + id));
+    }
+
     public List<FeedType> getFeedTypes() {
         return feedTypeRepository.findAll();
     }
